@@ -1,18 +1,35 @@
-  .fundo {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: "Source Sans Pro";
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  justify-content: center;
+  align-content: center;
+}
+
+.back {
   background-color: #B5D43C;
   text-align: center;
-
 };
 
-  .nome {
+  .header {
     color: #434738;
+
 }
 
   .caixa {
     background-color: #434738;
     margin: 15px;
     text-align: left;
-    padding: 10px;
+    padding: 20px;
     border-radius: 15px;
   }
 
@@ -24,3 +41,146 @@
   .foto {
     border-radius: 100%;
   }
+
+  .container {
+    position: relative;
+    padding: 15px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .gallery-wrapper {
+    overflow-x: auto;
+  }
+
+  .gallery {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+  }
+  
+  .item {
+    width: 30%;
+    height: 30%;
+    flex-shrink: 0;
+    transition: all 600ms ease-in-out;
+    border-radius: 100%;
+  }
+  
+  .gallery-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  a {
+    text-decoration:underline;
+    color:#B5D43C;
+  }
+
+  .ctts {
+    justify-content: space-between;
+    justify-items: center;
+  }
+  .ctt-image {
+    padding: 7%;
+    justify-items: center;
+    justify-content: center;
+  }
+  @media only screen and (min-width: 769px) {
+
+    .back {
+       background-color: #B5D43C;
+       display: grid;
+       grid-template-columns: 3fr 1fr;
+       grid-template-rows: 10vh 10vh 35vh 10vh 35vh;
+     }
+       
+     header {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       width: 90%;
+       max-width: 980px;
+       margin: auto;
+       color: black;
+       grid-column:1/3;
+     }
+       
+     .caixa {
+       background-color: #434738;
+       margin: 15px;
+       text-align: left;
+       padding: 20px;
+       border-radius: 15px;
+       color: #B5D43C
+     }
+   
+     main {
+       grid-column:1/2;
+       grid-row:3/4
+     }
+   
+     .main_box {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       justify-items: center;
+     }
+   
+     .foto {
+       align-items: center;
+       border-radius: 50%;
+     }
+   
+     .with_me {
+       justify-content: end;
+     }
+   
+     .competencias {
+       padding: 20px;
+       grid-column:2/3;
+       grid-row: 2/4;
+     }
+     .carrossel {
+       grid-column:1/2;
+       grid-row:5;
+       display: grid;
+       justify-items: center;
+     }
+   
+     .ctts {
+       margin: 15px;
+       padding: 10px;
+       border-radius: 15px;
+       grid-column:2/3;
+       grid-row: 4/6;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       grid-template-rows: 12vh 12vh;
+       grid-template-areas:
+       "c c"
+       "z g"
+       "l m" ;
+       text-align: center;
+     }
+   
+     .tit_ctt {
+       grid-area: c;
+       
+     }
+   
+     .zap {
+       grid-area: z;
+     }
+   
+     .git {
+       grid-area: g;
+     }
+   
+     .link{
+       grid-area: l;
+     }
+   
+     .mail{
+       grid-area: m;
+     }
+   }
